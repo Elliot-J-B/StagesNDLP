@@ -1,23 +1,45 @@
+{% extends "base.html.twig" %}
+{% block title %}Index{% endblock %}
+{% block content %}
 
-    {% extends "base.html.twig" %}
-        {% block title %}Index{% endblock %}
-        {% block content %}
 
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Example label</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-        </div>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/images/logo.jpeg" alt="Logo" width="35" height="35" class="d-inline-block align-text-top">
+            Bonjour tout le monde
+        </a>
+    </div>
+</nav>
 
-        <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Right-aligned menu example
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><button class="dropdown-item" type="button">Action</button></li>
-                <li><button class="dropdown-item" type="button">Another action</button></li>
-                <li><button class="dropdown-item" type="button">Something else here</button></li>
-            </ul>
-        </div>
 
-        {% endblock %}
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label"></label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+</div>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Right-aligned menu example
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li><button class="dropdown-item" type="button">Action</button></li>
+        <li><button class="dropdown-item" type="button">Another action</button></li>
+        <li><button class="dropdown-item" type="button">Something else here</button></li>
+    </ul>
+</div>
+
+
+<div class="card" style="width: 18rem;">
+    <img src="" class="rounded" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+            content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+
+
+
+{% endblock %}
