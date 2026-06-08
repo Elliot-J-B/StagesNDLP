@@ -9,9 +9,10 @@
 
 
 <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
+    <div class="container-fluid"><img src="/images/logo.jpeg" alt="Logo" width="35" height="35"
+            class="d-inline-block align-text-top">
+
         <a class="navbar-brand" href="#">
-            <img src="/images/logo.jpeg" alt="Logo" width="35" height="35" class="d-inline-block align-text-top">
             Décroche ton stage !
         </a>
         <nav aria-label="breadcrumb">
@@ -22,21 +23,15 @@
             </ol>
         </nav>
     </div>
+    <div class="container-fluid">
+        <h6 style="text-align:center" class="text-muted">
+            <em>Le bouche à oreille 2.0</em>
+        </h6>
+    </div>
 </nav>
 
-
-<div class="mb-3">
-    <label for="formGroupExampleInput" class="form-label"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-</div>
-
-<div class="btn-group">
-    <button type="button" class="btn btn-primary">
-        A quoi ça sert ?
-    </button>
-    
-</div>
-
+<br>
+<br>
 
 <div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
     style="max-width: 80rem; border-radius: 0.75rem;">
@@ -45,14 +40,17 @@
             <div class="card-body">
                 <h5>Bienvenue !</h5>
                 <p>
-                    Vous le savez surement, il est de plus en plus dur de trouver un stage. 
+                    Vous le savez surement, il est de plus en plus dur de trouver un stage.
                 </p>
-        
-                <p>    
-                    Les entreprises sont plus exigeantes, et les étudiants sont nombreux à chercher un stage. C'est pourquoi nous avons créé ce site. Pour vous aider à trouver un stage facilement et rapidement. 
+
+                <p>
+                    Les entreprises sont plus exigeantes, et les étudiants sont nombreux à chercher un stage. C'est
+                    pourquoi nous avons créé ce site. Pour vous aider à trouver un stage facilement et rapidement.
                 </p>
                 <p>
-                    Décroche ton stage est un site qui vous donne accès à une liste d'entreprises ayant accordé un stage à des étudiants de NDLP par le passé. Peu importe votre fillière, votre classe ou bien vos options, vous trouverez forcément une entreprise à contacter. 
+                    Décroche ton stage est un site qui vous donne accès à une liste d'entreprises ayant accordé un stage
+                    à des étudiants de NDLP par le passé. Peu importe votre fillière, votre classe ou bien vos options,
+                    vous trouverez forcément une entreprise à contacter.
                 </p>
                 <p>
                     N'attendez plus et décrochez votre stage dès maintenant !
@@ -63,9 +61,27 @@
 </div>
 
 <div class="btn-group">
-    <button type="button" class="btn btn-primary">
-        A quoi ça sert ?
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Besoin d'un Tuto ?
     </button>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
@@ -75,8 +91,24 @@
             <div class="card-body">
                 <h5>Comment utiliser le site ?</h5>
                 <p>
-                    blablablabla...
+                    L'utilisation du site est très simple. Il vous suffit d'indiquer votre filière et votre classe.
+                    Ensuite, vous aurez accès à la liste des entreprises ayant accordé un stage à des étudiants de cette
+                    fillière par le passé. Vous pourrez alors contacter ces entreprises pour leur demander s'ils ont des
+                    stages disponibles. Vous pourre aussi filtrer les résultats en fonction de plusieurs critères.
+
                 </p>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">Votre filière</li>
+                    <li class="list-group-item">Votre classe</li>
+                    <li class="list-group-item">Vos options</li>
+                    <li class="list-group-item">La localisation de l'entreprise</li>
+                    <li class="list-group-item">Des mots clefs
+                    </li>
+                </ul>
+
+
             </div>
         </div>
     </div>
