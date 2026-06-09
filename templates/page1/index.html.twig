@@ -32,7 +32,8 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
       <div class="navbar-nav w-100">
         <a class="nav-link" href="/#home">Accueil</a> {# Redirige vers l'accueil #}
         <a class="nav-link" href="/#tuto">Comment ça marche ?</a> {# Redirige vers la section comment ça marche ? #}
-        <a class="nav-link active" aria-current="page" href="/page1">Se lancer</a> {# Redirige vers la page de recherches d'entreprises#}
+        <a class="nav-link active" aria-current="page" href="/page1">Se lancer</a> {# Redirige vers la page de
+        recherches d'entreprises#}
         <a class="nav-link" href="/connecter">Se connecter</a>
       </div>
     </div>
@@ -52,7 +53,7 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
 
 
 
-       
+
 
 
 
@@ -62,22 +63,27 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
   <div class="row g-0">
     <div class="col-md-4">
 
-      <img src="/images/logo.jpeg" class="img-thumbnail" ;
-        style="object-fit: cover;margin: 5px;border-radius: 25rem;border: 1px solid #000;" alt="">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Notre Dame de La Providence [Exemple]</h5>
-        <p class="card-text">
-          Etablissement d'enseignement secondaire et supérieur privé.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        <span class="badge text-bg-success">New</span>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+      <label for="filiere" class="form-label">Recherchez l'entreprise de vos rêves</label>
+
+      <input class="form-control" list="datalistOptions" id="filiere" placeholder="Saisissez votre filière" type="text"
+        name="filiere">
+
+
+      <button type="submit" value="rechercher" class="btn btn-primary">Rechercher</button>
+      <button type="submit" value="ajouter_filtre" class="btn btn-secondary">Ajouter un filtre</button>
+
+      <datalist id="datalistOptions">
+        <option value="BTS SIO">
+        <option value="BTS SAM">
+        <option value="BTS GPME">
+        <option value="LYCEE PRO">
+      </datalist>
 
 
 
-{% endblock %}
+
+
+
+      {% endblock %}
