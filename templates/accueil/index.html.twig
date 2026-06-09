@@ -32,8 +32,8 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
       <div class="navbar-nav w-100">
         <a class="nav-link active" aria-current="page" href="#home">Accueil</a> {# Redirige vers l'accueil #}
         <a class="nav-link" href="#tuto">Comment ça marche ?</a> {# Redirige vers la section comment ça marche ? #}
-        <a class="nav-link" href="#">Se lancer</a> {# Redirige vers la page de recherches d'entreprises#}
-        <a class="nav-link" href="#">Se connecter</a>
+        <a class="nav-link" href="/page1">Se lancer</a> {# Redirige vers la page de recherches d'entreprises#}
+        <a class="nav-link" href="/connecter">Se connecter</a>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
 {# ///////////////////////////// ↓↓ Comment ça marche ? ↓↓ ///////////////////////////////////////////#}
 
 
-<br>
+
 <div class="btn-group">
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Besoin d'un Tuto ?
@@ -122,7 +122,7 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
           L'utilisation du site est très simple. Il vous suffit d'indiquer votre filière et votre classe.
           Ensuite, vous aurez accès à la liste des entreprises ayant accordé un stage à des étudiants de cette
           fillière par le passé. Vous pourrez alors contacter ces entreprises pour leur demander s'ils ont des
-          stages disponibles. Vous pourre aussi filtrer les résultats en fonction de plusieurs critères.
+          stages disponibles. Vous pourrez aussi filtrer les résultats en fonction de plusieurs critères.
 
         </p>
 
@@ -187,7 +187,7 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
             </h2>
             <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>Exemple :</strong> Paris, Lyon, Marseille, etc... <br><br>
+                <strong>Exemple :</strong> Avranches, Caen, Saint-Malo etc... <br><br>
                 <strong>Pourquoi ?</strong> Pour que vous puissiez trouver des opportunités près de chez vous.
               </div>
             </div>
@@ -195,7 +195,7 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 Des mots clefs
               </button>
             </h2>
@@ -203,7 +203,7 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
               <div class="accordion-body">
                 <strong>Exemple :</strong> Développement Web, Gestion des Entreprises, etc... <br><br>
                 <strong>Pourquoi ?</strong> Pour que vous puissiez trouver des opportunités qui correspondent à vos
-                compétences et à votre profil. .
+                compétences et à votre profil.
               </div>
             </div>
           </div>
@@ -222,22 +222,21 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
 <div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
   style="max-width: 80rem; border-radius: 0.75rem;">
   <div class="row g-0">
-    <div class="col-md-4">
+    
 
-      <img src="/images/logo.jpeg" class="img-thumbnail" ;
-        style="object-fit: cover;margin: 5px;border-radius: 25rem;border: 1px solid #000;" alt="">
-    </div>
+    
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Notre Dame de La Providence [Exemple]</h5>
+        <h5 class="card-title"><strong>Prêt à trouver un stage ?</strong></h5>
+        <br>
         <p class="card-text">
-          Etablissement d'enseignement secondaire et supérieur privé.
+          Alors clique ici et prépare ton téléphone, ton CV et ta lettre de motivation !
         </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        <span class="badge text-bg-success">New</span>
+        
       </div>
     </div>
   </div>
+  <a href="/page1" class="btn btn-primary ms-auto">C'est parti</a>
 </div>
 
 
