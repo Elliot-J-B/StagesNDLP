@@ -1,0 +1,244 @@
+{% extends "base.html.twig" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+
+
+{#
+Préambule :
+
+La partie Front End du site a été faite en utilisant la bibliothèque Bootstrap 5.3.
+Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting-started/introduction/
+#}
+
+
+
+
+
+{# ///////////////////////////// ↓↓ Barre de navigation ↓↓ ///////////////////////////////////////////#}
+
+<p id="home"></p> {# Ancre pour le lien vers l'accueil #}
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <img src="/images/logo.jpeg" alt="Logo" width="35" height="35" {# Logo de l'entreprise#}
+      class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="#">Décroche ton stage !<p class="fs-6 fw-light mb-0">Le bouche à oreille 2.0</p></a>
+    {# Nom
+    du site #}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav w-100">
+        <a class="nav-link active" aria-current="page" href="#home">Accueil</a> {# Redirige vers l'accueil #}
+        <a class="nav-link" href="#tuto">Comment ça marche ?</a> {# Redirige vers la section comment ça marche ? #}
+        <a class="nav-link" href="/page1">Se lancer</a> {# Redirige vers la page de recherches d'entreprises#}
+        <a class="nav-link" href="/connecter">Se connecter</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+{# ///////////////////////////// ↓↓ Présentation ↓↓ ///////////////////////////////////////////#}
+
+<div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
+  style="max-width: 80rem; border-radius: 0.75rem;">
+  <div class="row g-0">
+    <div class="col-md-8 text-start">
+      <div class="card-body">
+        <h5><strong>Bienvenue !</strong></h5>
+        <br>
+        <p>
+          Vous le savez surement, il est de plus en plus dur de trouver un stage.
+        </p>
+
+        <p>
+          Les entreprises sont plus exigeantes, et les étudiants sont nombreux à chercher un stage. C'est
+          pourquoi nous avons créé ce site. Pour vous aider à trouver un stage facilement et rapidement.
+        </p>
+        <p>
+          Décroche ton stage est un site qui vous donne accès à une liste d'entreprises ayant accordé un stage
+          à des étudiants de NDLP par le passé. Peu importe votre fillière, votre classe ou bien vos options,
+          vous trouverez forcément une entreprise à contacter.
+        </p>
+        <p>
+          N'attendez plus et décrochez votre stage dès maintenant !
+        </p>
+      </div>
+    </div>
+  </div>
+  <p id="tuto"> {# Ancre pour le lien vers la section comment ça marche ? #}
+  </p>
+</div>
+
+
+{# ///////////////////////////// ↓↓ Comment ça marche ? ↓↓ ///////////////////////////////////////////#}
+
+
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Besoin d'un Tuto ?
+  </button>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
+  style="max-width: 80rem; border-radius: 0.75rem;">
+  <div class="row g-0">
+    <div class="col-md-8 text-start">
+      <div class="card-body">
+        <h5><strong>Comment ça marche ?</strong></h5>
+        <br>
+        <p>
+          L'utilisation du site est très simple. Il vous suffit d'indiquer votre filière et votre classe.
+          Ensuite, vous aurez accès à la liste des entreprises ayant accordé un stage à des étudiants de cette
+          fillière par le passé. Vous pourrez alors contacter ces entreprises pour leur demander s'ils ont des
+          stages disponibles. Vous pourrez aussi filtrer les résultats en fonction de plusieurs critères.
+
+        </p>
+
+
+
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Votre filière
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Exemple :</strong> BTS SIO, BTS SAM, BTS GPME, LYCEE PROFESSIONNEL, etc... <br><br>
+                <strong>Pourquoi ?</strong> Car les entreprises ont des exigences différentes en fonction de la
+                fillière. Par exemple, une entreprise qui a accordé un stage à un étudiant de BTS SIO ne sera pas
+                forcément intéressée par un étudiant de BTS SAM.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Votre classe
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Exemple :</strong> Première année, Deuxième année, Troisième année, etc... <br><br>
+                <strong>Pourquoi ?</strong> Car les entreprises ont des exigences différentes en fonction de la classe.
+                Par exemple, une entreprise qui a accordé un stage à un étudiant de Première année ne sera pas forcément
+                intéressée par un étudiant de Troisième année.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Vos options
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Exemple :</strong> SLAM, SISR, etc... <br><br>
+                <strong>Pourquoi ?</strong> Car les entreprises ont des exigences différentes en fonction des options
+                choisies. Par exemple, une entreprise qui a accordé un stage à un étudiant de BTS SIO SLAM ne sera pas
+                forcément intéressée par un étudiant de BTS SIO SISR.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                La localisation de l'entreprise
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Exemple :</strong> Avranches, Caen, Saint-Malo etc... <br><br>
+                <strong>Pourquoi ?</strong> Pour que vous puissiez trouver des opportunités près de chez vous.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Des mots clefs
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Exemple :</strong> Développement Web, Gestion des Entreprises, etc... <br><br>
+                <strong>Pourquoi ?</strong> Pour que vous puissiez trouver des opportunités qui correspondent à vos
+                compétences et à votre profil.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
+  style="max-width: 80rem; border-radius: 0.75rem;">
+  <div class="row g-0">
+    
+
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Prêt à trouver un stage ?</strong></h5>
+        <br>
+        <p class="card-text">
+          Alors clique ici et prépare ton téléphone, ton CV et ta lettre de motivation !
+        </p>
+        
+      </div>
+    </div>
+  </div>
+  <a href="/page1" class="btn btn-primary ms-auto">C'est parti</a>
+</div>
+
+
+
+{% endblock %}
