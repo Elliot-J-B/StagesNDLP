@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/entreprise')]
+#[IsGranted('ROLE_TEACHER')]
 final class EntrepriseController extends AbstractController
 {
     #[Route(name: 'app_entreprise_index', methods: ['GET'])]
@@ -69,6 +70,7 @@ final class EntrepriseController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_entreprise_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Entreprise $entreprise, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$entreprise->getId(), $request->getPayload()->getString('_token'))) {

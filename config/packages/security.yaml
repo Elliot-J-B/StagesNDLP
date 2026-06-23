@@ -4,7 +4,8 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
 
     role_hierarchy:
-            ROLE_ADMIN: ROLE_USER
+            ROLE_TEACHER: ROLE_USER
+            ROLE_ADMIN: [ROLE_TEACHER, ROLE_ALLOWED_TO_SWITCH]
             ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider

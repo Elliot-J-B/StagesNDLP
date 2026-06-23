@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('/prof')]
-##[IsGranted('ROLE_ADMIN')]
+#[IsGranted('ROLE_ADMIN')]
 final class ProfController extends AbstractController
 {
     #[Route(name: 'app_prof_index', methods: ['GET'])]
@@ -34,6 +34,7 @@ final class ProfController extends AbstractController
 
 
     #[Route('/new', name: 'app_prof_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function new(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $hasher): Response
     {
         $prof = new Prof();
@@ -66,12 +67,15 @@ final class ProfController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_prof_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Prof $prof, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Prof $prof, EntityManagerInterface $entityManager, UserPasswordHasherInterface $hasher): Response
     {
         $form = $this->createForm(ProfType::class, $prof);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $plainPassword = $prof->getPassword();
+            $hashedPassword = $hasher->hashPassword($prof, $plainPassword);
+            $prof->setPassword($hashedPassword);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_prof_index', [], Response::HTTP_SEE_OTHER);
@@ -84,6 +88,7 @@ final class ProfController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_prof_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function delete(Request $request, Prof $prof, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$prof->getId(), $request->getPayload()->getString('_token'))) {
