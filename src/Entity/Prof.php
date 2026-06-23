@@ -107,4 +107,8 @@ class Prof implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $data;
     }
+    public function eraseCredentials(): void
+{
+    // Si vous stockez des données temporaires sensibles, les effacer ici
+}
 }

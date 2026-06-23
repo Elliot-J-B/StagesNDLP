@@ -16,4 +16,9 @@ class AccueilController extends AbstractController
         return $this->render('accueil/index.html.twig');
         
     }
+        #[Route('/debug-user')]
+    public function debugUser(): Response
+    {
+        dd($this->getUser());
+    }
 }
