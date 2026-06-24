@@ -1,13 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
+{% block title %}Index{% endblock %}
+{% block content %}
 
-{% block title %}Edit Prof{% endblock %}
 
-{% block body %}
+{#
+Préambule :
+
+La partie Front End du site a été faite en utilisant la bibliothèque Bootstrap 5.3.
+Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting-started/introduction/
+#}
+
+
+
+
+
+{# ///////////////////////////// ↓↓ Barre de navigation ↓↓ ///////////////////////////////////////////#}
+
+<p id="home"></p> {# Ancre pour le lien vers l'accueil #}
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <img src="/images/logo.jpeg" alt="Logo" width="35" height="35" {# Logo de l'entreprise#}
       class="d-inline-block align-text-top">
-      <a class="navbar-brand"></a>
+    <a class="navbar-brand"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -15,22 +29,32 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav w-100">
         <a class="nav-link" href="/">Accueil</a> {# Redirige vers l'accueil #}
-        <a class="nav-link" href="/dashboard">Dashboard</a> {# Redirige vers la section comment ça marche ? #}
+        <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a> {# Redirige vers la section comment ça marche ? #}
         <a class="nav-link" href="/entreprise">Gestion Entreprises / Stages</a> {# Redirige vers la page de recherches d'entreprises#}
-        <a class="nav-link active" aria-current="page" href="/prof">Gestion Roles</a>
+        <a class="nav-link" href="/prof">Gestion Roles</a>
       </div>
     </div>
   </div>
 </nav>
 
+
+
+
+
+
+
 <br>
 <br>
 <br>
-    <h1>Edit Prof</h1>
+<br>
 
-    {{ include('prof/_form.html.twig', {'button_label': 'Update'}) }}
+<a href="/prof"> test
 
-    <a href="{{ path('app_prof_index') }}">back to list</a>
+</a>
 
-    {{ include('prof/_delete_form.html.twig') }}
+{# ///////////////////////////// ↓↓ Présentation ↓↓ ///////////////////////////////////////////#}
+
+
+
+
 {% endblock %}

@@ -18,13 +18,26 @@
 </head>
 
 <body>
-    <div class="container">
-        {% block body %}
-            <div id="content">
-                {% block content %}{% endblock %}
-            </div>
-        {% endblock %}   
+<div class="container">
+    {% block body %}
+        {% set error_message = app.session.get('_error_message') %}
+{% if error_message %}
+    <div class="card bg-secondary-subtle shadow-lg mx-auto text-center" style="max-width: 1200px; border-radius: 0.75rem; margin-top: 8rem;">
+        <div class="card-body">
+            <h4 class="card-title text-danger fw-bold">
+                <i class="bi bi-exclamation-triangle-fill"></i> Accès refusé
+            </h4>
+            <p class="card-text text-danger">{{ error_message }}</p>
+        </div>
     </div>
+    {% do app.session.remove('_error_message') %}
+{% endif %}
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    {% endblock %}   
+</div>
+</body>
 </body>
 
 </html>

@@ -33,8 +33,7 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
         <a class="nav-link active" aria-current="page" href="#home">Accueil</a> {# Redirige vers l'accueil #}
         <a class="nav-link" href="#tuto">Comment ça marche ?</a> {# Redirige vers la section comment ça marche ? #}
         <a class="nav-link" href="/page1">Se lancer</a> {# Redirige vers la page de recherches d'entreprises#}
-        <a class="nav-link" href="/login">Se connecter</a>
-        <a class="nav-link" href="/prof">Espace Admin</a>
+        <a class="nav-link" href="/dashboard">Dashboard Admin</a>
       </div>
     </div>
   </div>
@@ -50,7 +49,18 @@ Voici la doc technique de Bootstrap -> https://getbootstrap.com/docs/5.3/getting
 <br>
 <br>
 <br>
-
+{% set error_message = app.session.get('_error_message') %}
+{% if error_message %}
+    <div class="card bg-secondary-subtle shadow-lg mx-auto text-center mt-5 pt-2" style="max-width: 600px; border-radius: 0.75rem;">
+        <div class="card-body">
+            <h4 class="card-title text-danger fw-bold">
+                <i class="bi bi-exclamation-triangle-fill"></i> Accès refusé
+            </h4>
+            <p class="card-text text-danger">{{ error_message }}</p>
+        </div>
+    </div>
+    {% do app.session.remove('_error_message') %}
+{% endif %}
 {# ///////////////////////////// ↓↓ Présentation ↓↓ ///////////////////////////////////////////#}
 
 <div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
