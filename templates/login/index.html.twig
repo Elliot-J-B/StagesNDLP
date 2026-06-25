@@ -1,11 +1,6 @@
 {# templates/login/index.html.twig #}
 {% extends 'base.html.twig' %}
 {% block body %}
-    {% if error %}
-        <div style="color:red">
-            {{ error.messageKey|trans(error.messageData, 'security') }}
-        </div>
-    {% endif %}
     <p id="home"></p>
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -26,24 +21,31 @@
         </div>
     </nav>
     <br><br><br><br>
-    <div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
-        style="max-width: 80rem; border-radius: 0.75rem;">
-        <div class="row g-0">
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Se connecter</h5>
-                    <form action="{{ path('app_login') }}" method="post">
-                        <label for="username">Identifiant:</label>
-                        <input type="text" id="username" name="_username" value="{{ last_username }}" required>
-                        <br>
-                        <label for="password">Mot de passe:</label>
-                        <input type="password" id="password" name="_password" required>
-                        <br>
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        <button type="submit">login</button>
-                    </form>
-                </div>
-            </div>
+
+<div class="card bg-secondary-subtle shadow-lg p-3 mb-5 bg-body-tertiary rounded-1.25"
+  style="max-width: 80rem; border-radius: 0.75rem;">
+  <div class="row g-0">
+    <div class="col-md-4">
+<form action="{{ path('app_login') }}" method="post">
+  <div class="mb-3">
+    <label for="username"class="form-label">Identifiant</label>
+    <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}">
+    <br>
+  {% if error %}
+        <div style="color:red">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
         </div>
-    </div>
+        <br>
+    {% endif %}
+  <div class="mb-3">
+    <label for="password" class="form-label">Mot de passe</label>
+    <input type="password" class="form-control" id="password" name="_password" required>
+  </div>
+  <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+  </div>
+</div>
+
 {% endblock %}

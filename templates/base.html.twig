@@ -22,12 +22,11 @@
     {% block body %}
         {% set error_message = app.session.get('_error_message') %}
 {% if error_message %}
-    <div class="card bg-secondary-subtle shadow-lg mx-auto text-center" style="max-width: 1200px; border-radius: 0.75rem; margin-top: 8rem;">
+    <div class style="max-width: 1200px; border-radius: 0.75rem; margin-top: 7rem;">
         <div class="card-body">
-            <h4 class="card-title text-danger fw-bold">
-                <i class="bi bi-exclamation-triangle-fill"></i> Accès refusé
-            </h4>
-            <p class="card-text text-danger">{{ error_message }}</p>
+            <div class="alert alert-danger" role="alert"> 
+                <p class="card-text text-danger">{{ error_message }}</p>
+            </div>
         </div>
     </div>
     {% do app.session.remove('_error_message') %}
