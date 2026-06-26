@@ -26,9 +26,9 @@
   style="max-width: 80rem; border-radius: 0.75rem;">
   <div class="row g-0">
     <div class="col-md-4">
-<form action="{{ path('app_login') }}" method="post">
+<form action="{{ path('app_login') }}" method="post" data-turbo="false">
   <div class="mb-3">
-    <label for="username"class="form-label">Identifiant</label>
+    <label for="username" class="form-label">Identifiant</label>
     <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}">
     <br>
   {% if error %}

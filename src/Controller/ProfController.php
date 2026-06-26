@@ -91,10 +91,10 @@ final class ProfController extends AbstractController
     #[IsGranted('ROLE_SUPER_ADMIN')]
     public function delete(Request $request, Prof $prof, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$prof->getId(), $request->getPayload()->getString('_token'))) {
+        // if ($this->isCsrfTokenValid('delete'.$prof->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($prof);
             $entityManager->flush();
-        }
+       // }
 
         return $this->redirectToRoute('app_prof_index', [], Response::HTTP_SEE_OTHER);
     }

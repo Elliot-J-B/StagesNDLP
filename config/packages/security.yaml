@@ -34,8 +34,8 @@ security:
                 csrf_parameter: _csrf_token
                 csrf_token_id: authenticate
             login_throttling:
-                max_attempts: 5
-                interval: '15 minutes'
+               max_attempts: 5
+               interval: '15 minutes'
             logout:
                 path: /accueil
             # Activate different ways to authenticate:
