@@ -2,6 +2,31 @@
 <html lang="fr">
 
 <head>
+    <p id="home"></p> {# Ancre pour le lien vers l'accueil #}
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <img src="/images/logo.jpeg" alt="Logo" width="35" height="35" {# Logo de l'entreprise#}
+      class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="#">Décroche ton stage !<p class="fs-6 fw-light mb-0">Le bouche à oreille 2.0</p></a>
+    {# Nom
+    du site #}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav w-100">
+        <a class="nav-link active" aria-current="page" href="/">Accueil</a> {# Redirige vers l'accueil #}
+        <a class="nav-link" href="/#tuto">Comment ça marche ?</a> {# Redirige vers la section comment ça marche ? #}
+        <a class="nav-link" href="/page1">Se lancer</a> {# Redirige vers la page de recherches d'entreprises#}
+        <a class="nav-link" href="/login">Se connecter</a>
+        <a class="nav-link" href="/logout">Se déconnecter</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<br><br><br>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +45,7 @@
 <body>
     <div class="container">
         {% block body %}
+            
             <div id="content">
                 {% block content %}{% endblock %}
             </div>
