@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Internship index{% endblock %}
+
+{% block body %}
+    <h1>Internship index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Résumé</th>
+                <th>Année</th>
+                <th>Entreprise</th>
+                <th>formation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for internship in internships %}
+            <tr>
+                <td>{{ internship.id }}</td>
+                <td>{{ internship.date|date('Y') }}</td>
+                <td>{{ internship.resume }}</td>
+                <td>{{ internship.formation.nom }}</td>
+                <td>{{ internship.entreprise.nom }}</td>
+                <td>{{ internship.annee }}</td>
+                <td>
+                    <a href="{{ path('app_internship_show', {'id': internship.id}) }}">show</a>
+                    <a href="{{ path('app_internship_edit', {'id': internship.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_internship_new') }}">Create new</a>
+{% endblock %}

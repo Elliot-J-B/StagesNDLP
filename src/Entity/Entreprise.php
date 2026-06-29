@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\EntrepriseRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 #[ORM\Entity(repositoryClass: EntrepriseRepository::class)]
 class Entreprise
@@ -15,6 +17,9 @@ class Entreprise
 
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
+
+    #[ORM\OneToMany(mappedBy: 'entreprise', targetEntity: Internship::class)]
+    private Collection $internships;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $email = null;
@@ -106,5 +111,15 @@ class Entreprise
         $this->localisation = $localisation;
 
         return $this;
+    }
+
+    public function __construct()
+    {
+        $this->internships = new ArrayCollection();
+    }
+
+    public function getInternships(): Collection
+    {
+        return $this->internships;
     }
 }

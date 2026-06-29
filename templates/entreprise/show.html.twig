@@ -35,6 +35,28 @@
                 <th>Localisation</th>
                 <td>{{ entreprise.localisation }}</td>
             </tr>
+            <tr>
+                {% for stage in entreprise.internships %}
+            <tr>
+                <th>Date de stages</th>
+                <td>{{ stage.date|date('Y') }}</td>
+            </tr>
+            <tr>
+                <th>Filière</th>
+                <td>{{ stage.formation.nom }}</td>
+            </tr>
+            <tr>
+                <th>Année d'études</th>
+                <td>{{ stage.annee }}</td>
+            </tr>
+            
+                <th>Résumé du stage</th>
+                <td>{{ stage.resume }}</td>
+            </tr>
+            {% endfor %}
+                </td>
+            </tr>
+            </tr>
         </tbody>
     </table>
 
