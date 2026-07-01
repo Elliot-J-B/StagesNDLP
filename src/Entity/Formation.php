@@ -6,6 +6,7 @@ use App\Repository\FormationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FormationRepository::class)]
+#[IsGranted('ROLE_TEACHER')]
 class Formation
 {
     #[ORM\Id]

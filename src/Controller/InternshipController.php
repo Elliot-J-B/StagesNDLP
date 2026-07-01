@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/internship')]
+#[IsGranted('ROLE_TEACHER')]
 final class InternshipController extends AbstractController
 {
     #[Route(name: 'app_internship_index', methods: ['GET'])]
